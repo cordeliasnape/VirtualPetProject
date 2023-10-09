@@ -20,7 +20,7 @@ function showNameContainer() {
   } else if (myNameContainer.style.display === "flex" && inputName === "") {
     myNameContainer.style.display = "none";
     inputName = "Freddie";
-    petName();
+    setPetName();
   } else {
     myNameContainer.style.display = "none";
   }
@@ -44,6 +44,9 @@ petNameForm.addEventListener("submit", function (event) {
   }
 
   localStorage.setItem("petName", inputName);
-
+  showNameContainer();
   setPetName();
 });
+
+// Colour Changer
+const petImg = document.getElementById("petImg");
