@@ -1,0 +1,129 @@
+:root {
+  --main-bg-colour: #bfc7ed;
+  --secondary-bg-colour: #6699cc;
+  --content-bg-colour: #e6c0e9;
+  --main-txt-colour: #f8faf0;
+  --outline-colour: #c9eddc;
+}
+
+/* DEFAULTS */
+body {
+  margin: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: var(--main-bg-colour);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow: hidden;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header img {
+  width: 200px;
+  height: 200px;
+}
+
+/* HEADER SECTION */
+.leftSideHeader {
+  display: flex;
+  align-items: center;
+  margin-left: 25vw;
+  color: var(--main-txt-colour);
+}
+.leftSideHeader h1 {
+  padding-left: 100px;
+  font-size: 48px;
+  font-weight: bold;
+  text-wrap: nowrap;
+}
+.rightSideHeader {
+  margin-right: 25vw;
+  padding-left: 50px;
+}
+.rightSideHeader button {
+  background-color: var(--content-bg-colour);
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-align: center;
+
+  height: 75px;
+  width: 75px;
+  border-radius: 37.5px;
+  border-style: solid;
+  border-color: var(--outline-colour);
+  overflow: hidden;
+
+  box-shadow: 0px 0px 5px var(--content-bg-colour), 0px 0px 10px var(--content-bg-colour), 0px 0px 25px var(--content-bg-colour),
+    0px 0px 100px var(--content-bg-colour);
+
+  transition: transform 0.3s, background-color 0.3s;
+}
+.rightSideHeader button:hover {
+  background-color: var(--secondary-bg-colour);
+  transform: scale(1.05);
+  box-shadow: 0px 0px 5px var(--secondary-bg-colour), 0px 0px 10px var(--secondary-bg-colour), 0px 0px 25px var(--secondary-bg-colour),
+    0px 0px 100px var(--secondary-bg-colour);
+}
+.rightSideHeader button:active {
+  transform: scale(0.8);
+}
+
+/* CUSTOME SECTION */
+.customiseContainer {
+  border: 3px solid black;
+  background-color: var(--secondary-bg-colour);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 40vw;
+  height: 60vh;
+
+  overflow: auto;
+}
+.leftSideCustomise {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.rightSideCustomise {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 25px;
+}
+.customiseButton {
+  background-color: var(--outline-colour);
+  border-color: var(--main-bg-colour);
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 15px;
+
+  min-width: 275px;
+  align-self: center;
+  padding: 25px;
+  margin: 10px 50px;
+
+  font-size: 28px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+
+  transition: transform 0.3s, background-color 0.3s;
+}
+.customiseButton:hover {
+  background-color: var(--main-txt-colour);
+}
+.customiseButton:active {
+  transform: scale(0.9);
+}
