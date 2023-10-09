@@ -140,3 +140,41 @@ header img {
   border: none;
   box-shadow: 0px 0px 5px #c9eddc, 0px 0px 10px #c9eddc, 0px 0px 25px #c9eddc, 0px 0px 50px #c9eddc, 0px 0px 250px #c9eddc;
 }
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  /* Reset the header styles */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  header img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .leftSideHeader {
+    margin: 0;
+  }
+
+  .leftSideHeader h1 {
+    padding: 20px 0;
+    font-size: 36px;
+  }
+
+  size and spacing */ .rightSideHeader button {
+    height: 75px;
+    width: 75px;
+  }
+  .customiseContainer {
+    flex-direction: column-reverse;
+    width: 80vw;
+  }
+
+  .rightSideCustomise {
+    margin-top: 25px;
+  }
+}
