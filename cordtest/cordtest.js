@@ -29,8 +29,6 @@ function decreaseHunger() {
   }
 }
 
-feedButton.addEventListener("click", feedPet);
-
 setInterval(decreaseHunger, 1000);
 
 updatePet();
