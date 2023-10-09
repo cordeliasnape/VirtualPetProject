@@ -74,6 +74,7 @@ function decreaseHappy() {
   }
 }
 
+
 //testIntervals
 setInterval(decreaseHunger, 1000);
 setInterval(increaseHealth, 2500);
