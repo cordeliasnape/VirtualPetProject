@@ -56,8 +56,8 @@ function increaseHealth() {
   if (healthLevel > 0) {
     const increaseAmount = (healthIncreaseRate / 100) * healthLevel;
     healthLevel += increaseAmount;
-    if (healthLevel < 0) {
-      healthLevel = 0;
+    if (healthLevel > 100) {
+      healthLevel = 100;
     }
     updatePet();
   }
@@ -74,11 +74,10 @@ function decreaseHappy() {
   }
 }
 
-
 //testIntervals
-setInterval(decreaseHunger, 1000);
+setInterval(decreaseHunger, 200);
 setInterval(increaseHealth, 2500);
-setInterval(decreaseHappy, 500);
+setInterval(decreaseHappy, 200);
 updatePet();
 
 //real intervals
@@ -128,3 +127,34 @@ saladButton.addEventListener("click", function () {
   }
   updatePet();
 });
+
+function updateCatImage() {
+  //setting values for animals, can change to include sprites
+  const catImg = document.getElementById("catImg");
+
+  console.log("Hunger Level:", hungerLevel);
+  console.log("Health Level:", healthLevel);
+  console.log("Happy Level:", happyLevel);
+
+  //if statement
+  if (hungerLevel <= 5 || healthLevel <= 10 || happyLevel <= 5) {
+    catImg.src = "/images/end2.png";
+  } else if (hungerLevel <= 30 && happyLevel <= 30) {
+    catImg.src = "/images/cats/cat-sad1.png";
+  } else if (hungerLevel <= 50 && happyLevel <= 50) {
+    catImg.src = "/images/cats/cat-mid1.png";
+  } else if (hungerLevel <= 90 && happyLevel <= 90) {
+    catImg.src = "/images/cats/cat-happy1.png";
+  } else if (hungerLevel > 90 && healthLevel >= 50 && happyLevel > 90) {
+    catImg.src = "/images/cats/cat-super1.png";
+  } else {
+    catImg.src = "";
+  }
+}
+
+function updatePet() {
+  updateHungerBar();
+  updateHealthBar();
+  updateHappyBar();
+  updateCatImage();
+}
