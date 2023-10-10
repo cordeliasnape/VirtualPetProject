@@ -32,6 +32,9 @@ header img {
 fieldset {
   border: none;
 }
+button {
+  cursor: pointer;
+}
 
 /* HEADER SECTION */
 .leftSideHeader {
@@ -166,14 +169,9 @@ fieldset {
 }
 #petImg {
   border: 2px solid black;
-  z-index: 10;
 }
 #changePetColor {
-  width: 150px;
-  height: 150px;
   background-color: rgb(255, 255, 255);
-  position: absolute;
-  top: 46.9vh;
 }
 
 /* Input Buttons */
