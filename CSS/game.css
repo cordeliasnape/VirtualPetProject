@@ -12,43 +12,73 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-}
-
-h1 {
-  text-align: center;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  position: absolute;
-  top: 0;
-  width: 100%;
   padding: 20px;
+  margin: 20px;
 }
 
-h2 {
+.rightSideHeader {
+  position: fixed;
+  border-radius: 10px;
+  padding-left: 50px;
+}
+
+.rightSideHeader button {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 2px;
   text-align: center;
-  color: white;
-  display: flex;
-  justify-content: center;
+  height: 75px;
+  width: 75px;
+  border-radius: 37.5px;
+  border-style: solid;
 }
 
-p {
-  text-align: center;
-  color: white;
-  display: flex;
-  justify-content: center;
+.rightSideHeader button:hover {
+  background-color: purple;
 }
 
-button {
-  padding: 10px;
-  border-radius: 50px;
-  margin-top: 1rem;
-  color: white;
-  cursor: pointer;
-  background-color: #8cd7b4;
-  font-weight: 600;
-  width: 60px;
+.container {
+  margin-top: 100px;
+  border: 5px solid black;
+  width: 650px;
+  height: 600px;
+  background-color: lightblue;
+  border-radius: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 20px;
+  flex-direction: column;
+}
+
+.nameBox {
+  border: 5px solid black;
+  color: blue;
+  font-size: 30px;
+  font-weight: bold;
+  width: 200px;
+  height: 80px;
+  background-color: lightgreen;
+  margin-top: 30px;
+}
+
+.gameSpace {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid black;
+  width: 500px;
+  height: 300px;
+  background-color: lightgreen;
+  margin-top: 20px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
 }
