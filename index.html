@@ -15,25 +15,33 @@
         <h1>VIRTUAL PET</h1>
       </div>
       <div class="rightSideHeader">
-        <button>SAVES</button>
+        <button onclick="savesClicked()">SAVES</button>
       </div>
     </header>
 
     <main>
       <div class="customiseContainer">
         <div class="leftSideCustomise">
-          <button class="customiseButton" id="customiseName">
-            NAME YOUR PET
-          </button>
-          <button class="customiseButton" id="customiseColour">
-            CHOOSE COLOUR
-          </button>
+         <button class="customiseButton" id="customiseName" onclick="showNameContainer()">NAME YOUR PET</button>
+          <div id="nameContainer">
+            <form>
+              <fieldset>
+                <input type="text" placeholder="Type the Pet's name!" name="inputName" maxlength="12" />
+                <button>Submit</button>
+              </fieldset>
+            </form>
+          </div>
+          <button class="customiseButton" id="customiseColour">CHOOSE COLOUR</button>
           <button class="customiseButton" id="customiseFinish">START</button>
         </div>
         <div class="rightSideCustomise">
-          <h2>NAME OF PET</h2>
-          <img src="./images/download-1.jpg" alt="This is your pet" />
+          <h2 id="nameOfPet">NAME OF PET</h2>
+          <img id="petImg" src="./images/neutral-cat.png" alt="This is your pet" />
         </div>
+      </div>
+
+      <div id="petSavesContainer">
+        <button class="savedData">SAVE #1</button>
       </div>
     </main>
 
