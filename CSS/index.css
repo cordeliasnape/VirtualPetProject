@@ -164,6 +164,9 @@ fieldset {
   background-color: silver;
   flex: 1;
 }
+#petImg {
+  border: 2px solid black;
+}
 
 /* Input Buttons */
 #nameContainer {
@@ -187,7 +190,7 @@ fieldset {
 }
 
 /* Media Query for Mobile Devices */
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   /* Reset the header styles */
   header {
     display: flex;
