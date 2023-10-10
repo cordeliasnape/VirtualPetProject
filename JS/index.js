@@ -130,11 +130,11 @@ function startButton() {
   const lsAnimalName = localStorage.getItem("petAnimal");
 
   if (lsPetName && lsColorName && lsAnimalName) {
-    window.location.href = "./../game.html";
+    window.location.href = "./game.html";
   } else {
     localStorage.setItem("petName", "Freddie");
     localStorage.setItem("petColor", "#fff");
     localStorage.setItem("petAnimal", "Cat");
-    window.location.href = "./../game.html";
+    window.location.href = "./game.html";
   }
 }
