@@ -10,7 +10,7 @@ function savesClicked() {
 }
 
 // Pet Namer
-let inputName = "";
+let inputName = "Pet Name";
 let myNameContainer = document.getElementById("nameContainer");
 let inputPetName = document.getElementById("nameOfPet");
 
@@ -47,6 +47,8 @@ petNameForm.addEventListener("submit", function (event) {
   showNameContainer();
   setPetName();
 });
+
+// if (localStorage.getItem(""))
 
 // Colour Changer
 const petImg = document.getElementById("petImg");
