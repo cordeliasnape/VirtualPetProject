@@ -27,10 +27,9 @@ function showNameContainer() {
 }
 
 function setPetName() {
-  inputPetName.innerText = inputName;
+  inputPetName.innerText = localStorage.getItem("petName");
 }
 
-// Pet Name Form
 const petNameForm = document.getElementById("nameContainer");
 
 petNameForm.addEventListener("submit", function (event) {
@@ -47,8 +46,42 @@ petNameForm.addEventListener("submit", function (event) {
   showNameContainer();
   setPetName();
 });
+setPetName();
 
 // if (localStorage.getItem(""))
 
 // Colour Changer
-const petImg = document.getElementById("petImg");
+const petColorForm = document.getElementById("colorPicker");
+let divColorChanger = document.getElementById("changePetColor");
+let petColor = "";
+
+function showColorContainer() {
+  if (petColorForm.style.display === "none" || petColorForm.style.display === "") {
+    petColorForm.style.display = "flex";
+  } else if (petColorForm.style.display === "flex" && inputName === "") {
+    petColorForm.style.display = "none";
+    inputName = "Freddie";
+    setPetName();
+  } else {
+    petColorForm.style.display = "none";
+  }
+}
+
+petColorForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const colorChoice = event.target.inputColor.value;
+  petColor = colorChoice;
+
+  if (colorChoice) {
+    petColorChanger();
+  }
+
+  localStorage.setItem("petColor", colorChoice);
+});
+
+function petColorChanger() {
+  divColorChanger.style.backgroundColor = localStorage.getItem("petColor");
+}
+
+petColorChanger();
