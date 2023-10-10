@@ -85,3 +85,18 @@ function petColorChanger() {
 }
 
 petColorChanger();
+
+// Start The Game
+
+function startButton() {
+  const lsPetName = localStorage.getItem("petName");
+  const lsColorName = localStorage.getItem("petColor");
+
+  if (lsPetName && lsColorName) {
+    window.location.href = "./../game.html";
+  } else {
+    localStorage.setItem("petName", "Freddie");
+    localStorage.setItem("petColor", "#fff");
+    window.location.href = "./../game.html";
+  }
+}
