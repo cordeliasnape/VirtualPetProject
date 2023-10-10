@@ -5,26 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./CSS/game.css" />
     <script src="./JS/game.js" defer></script>
+    <script src="./JS/index.js" defer></script>
     <title>Tamagoci | Games Page</title>
   </head>
   <body>
-    <header>
-      <h1>Virtual Pet Game</h1>
-    </header>
+  <header>
+    <div class="rightSideHeader">
+      <button onclick="savesClicked()">SAVES</button>
+    </div>
+  </header>
+
     <main>
-      <section class="container">
         <div class="pet-info">
-          <form id="pet-form">
-            <label for="pet-name">Cat's Name:</label>
-            <input type="text" id="pet-name" required /><br />
-            <label for="animal-type">Animal Type:</label>
-            <input type="text" id="animal-type" required /><br />
-            <button type="submit">Submit</button>
-          </form>
+          <div class="container">
+            <div class="nameBox">
 
-          <img />
+            </div>
+            <div class="gameSpace">
+              <img src="/images/cats/cat-happy1.png"/>
+            </div>
 
-          <div id="hungerLevel">
+          </div>
+          
+
+
+
+        </main>
+      </body>
+    </html>
+
+
+            <!-- <button type="submit">Submit</button> -->
+          
+
+          <!-- <div id="hungerLevel">
             <p>Hunger Level:</p>
           </div>
           <div id="happinessLevel">
@@ -33,11 +47,9 @@
         </div>
         <button id="feedButton">Feed</button>
         <button id="playButton">Play</button>
-      </section>
-      <!-- span -->
-    </main>
-  </body>
-</html>
+      </section> -->
+      
+    
 
 <!-- <button class="button" onclick="feed()">Feed</button>
 <button class="button" onclick="play()">Play</button> -->
