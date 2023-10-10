@@ -166,6 +166,14 @@ fieldset {
 }
 #petImg {
   border: 2px solid black;
+  z-index: 10;
+}
+#changePetColor {
+  width: 150px;
+  height: 150px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 46.9vh;
 }
 
 /* Input Buttons */
@@ -181,6 +189,26 @@ fieldset {
   border: 2px solid black;
 }
 #nameContainer button {
+  margin-left: 2px;
+  background-color: black;
+  color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 5vh;
+}
+#colorPicker {
+  display: none;
+  margin-top: -60px;
+  background-color: rgba(0, 0, 0, 0.238);
+  color: white;
+  border-radius: 25px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+#colorFormInput {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+#colorFormSubmit {
   margin-left: 2px;
   background-color: black;
   color: white;
