@@ -214,6 +214,26 @@ button {
   border-radius: 5px;
   height: 5vh;
 }
+#animalContainer {
+  display: none;
+}
+.animalButton {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid silver;
+
+  display: inline;
+
+  transition: background-color 0.3s, transform 0.3s;
+}
+.animalButton:hover {
+  background-color: rgb(59, 59, 59);
+}
+.animalButton:active {
+  transform: scale(0.8);
+}
 
 /* Media Query for Mobile Devices */
 @media (max-width: 1300px) {
