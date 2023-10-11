@@ -60,6 +60,39 @@ gameSpace.appendChild(petImageElement);
 //   myPet.type = petType;
 //   myPet.color = petColor;
 
+//add event listener
+const petForm = document.getElementById("pet-form");
+petForm.addEventListener("submit", petInfoSubmit);
+
+//Patrick's background changing code
+function showPark() {
+  document.querySelector("body").style.background =
+    "url('/images/backgroundlocations/animalpark.jpg') center center / cover";
+}
+function showParty() {
+  document.querySelector("body").style.background =
+    "url('images/backgroundlocations/animalparty.jpg') center center / cover";
+}
+const modal = document.getElementById("myModal");
+
+const btn = document.getElementById("activityModalButton");
+
+const span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function () {
+  modal.style.display = "block";
+};
+span.onclick = function () {
+  modal.style.display = "none";
+};
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+// End of Patrick's background changing code
+
 //   // Call the displayPetInfo function
 //   displayPetInfo();
 // });
+
