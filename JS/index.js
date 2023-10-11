@@ -23,14 +23,14 @@ function showAnimalContainer() {
 }
 
 function changeAnimalHusky() {
-  petImg.src = "./images/husky/dog-super1.png";
+  petImg.src = "./images/husky/husky-super1.png";
   animalType = "Husky";
 
   localStorage.setItem("petAnimal", animalType);
 }
 
 function changeAnimalCat() {
-  petImg.src = "./images/cats/cat-super1.png";
+  petImg.src = "./images/cat/cat-super1.png";
   animalType = "Cat";
 
   localStorage.setItem("petAnimal", animalType);
@@ -40,9 +40,9 @@ function setAnimalImage() {
   let lsAnimal = localStorage.getItem("petAnimal");
 
   if (lsAnimal === "Husky") {
-    petImg.src = "./images/husky/dog-super1.png";
+    petImg.src = "./images/husky/husky-super1.png";
   } else if (lsAnimal === "Cat") {
-    petImg.src = "./images/cats/cat-super1.png";
+    petImg.src = "./images/cat/cat-super1.png";
   }
 }
 setAnimalImage();
