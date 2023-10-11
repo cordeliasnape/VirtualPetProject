@@ -16,12 +16,13 @@ petColorChanger();
 // Pet Animal Changer
 let petImg = document.getElementById("petImg");
 let lsAnimal = localStorage.getItem("petAnimal");
+let lsAnimalLow = lsAnimal.toLowerCase();
 
 function setAnimalImage() {
   if (lsAnimal === "Husky") {
-    petImg.src = "./images/husky/dog-super1.png";
+    petImg.src = "./images/husky/husky-super1.png";
   } else if (lsAnimal === "Cat") {
-    petImg.src = "./images/cats/cat-super1.png";
+    petImg.src = "./images/cat/cat-super1.png";
   }
 }
 setAnimalImage();
