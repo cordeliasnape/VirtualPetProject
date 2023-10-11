@@ -1,188 +1,118 @@
+// Globals to change pet animation & image
+// DO NOT TOUCH
 let petMood = "super";
 let petImageNum = 1;
 
-const petContainer = document.getElementById("pet-container");
-
-// bars/levels
+// Getting every element needed
+// DO NOT TOUCH
 const hungerBar = document.getElementById("hunger-bar");
 const healthBar = document.getElementById("health-bar");
 const happyBar = document.getElementById("happy-bar");
-
-// foods
 const feedButton = document.getElementById("feed-button");
 const chocoButton = document.getElementById("choco-button");
 const saladButton = document.getElementById("salad-button");
-
-//activites
 const partyButton = document.getElementById("party-button");
 const parkButton = document.getElementById("park-button");
 const gymButton = document.getElementById("gym-button");
 
-// Level Defaults (%)
-let hungerLevel = 100;
-let healthLevel = 50;
-let happyLevel = 100;
+// Every Detail on the Pet
+let petEverything = {
+  levelDefault: {
+    hunger: 75,
+    health: 50,
+    happy: 100,
+  },
+  updateRates: {
+    hunger: 1,
+    health: 2,
+    happy: 1,
+  },
+  food: {
+    feed: {
+      happy: 1,
+      health: 0,
+      hunger: 5,
+    },
+    chocolate: {
+      happy: 5,
+      health: -3,
+      hunger: 1,
+    },
+    salad: {
+      happy: -3,
+      health: 3,
+      hunger: 0,
+    },
+  },
+  activities: {
+    gym: {
+      happy: 2,
+      health: 5,
+      hunger: -3,
+    },
+    park: {
+      happy: 3,
+      health: 1,
+      hunger: -2,
+    },
+    party: {
+      happy: 5,
+      health: -1,
+      hunger: -2,
+    },
+  },
+};
 
-// Level Changing Rates (% per update)
-const hungerUpdateRate = 1;
-const healthUpdateRate = 2;
-const happyUpdateRate = 1;
-
-// Function to update the pet's bars every tick
+// Function to update the pet every tick
 function updatePet() {
-  updateHungerBar();
-  updateHealthBar();
-  updateHappyBar();
-}
-function updateHungerBar() {
-  hungerBar.style.width = `${hungerLevel}%`;
-}
-function updateHealthBar() {
-  healthBar.style.width = `${healthLevel}%`;
-}
-function updateHappyBar() {
-  happyBar.style.width = `${happyLevel}%`;
+  hungerBar.style.width = `${petEverything.levelDefault.hunger}%`;
+  healthBar.style.width = `${petEverything.levelDefault.health}%`;
+  happyBar.style.width = `${petEverything.levelDefault.happy}%`;
+
+  if (petEverything.levelDefault.hunger <= 5 || petEverything.levelDefault.health <= 10 || petEverything.levelDefault.happy <= 5) {
+    petImg.src = `/images/end2.png`;
+    petHasDied();
+  } else if (petEverything.levelDefault.hunger <= 30 || (petEverything.levelDefault.happy <= 30 && petMood !== "sad")) {
+    petMood = "sad";
+  } else if (petEverything.levelDefault.hunger <= 50 || (petEverything.levelDefault.happy <= 50 && petMood !== "mid")) {
+    petMood = "mid";
+  } else if (petEverything.levelDefault.hunger <= 90 || (petEverything.levelDefault.happy <= 90 && petMood !== "happy")) {
+    petMood = "happy";
+  } else if (
+    petEverything.levelDefault.hunger > 90 ||
+    (petEverything.levelDefault.health >= 50 && petEverything.levelDefault.happy > 90 && petMood !== "super")
+  ) {
+    petMood = "super";
+  }
 }
 
-// Functions to update the bars based on the level changing rates
+// Functions to update the bars every setInterval
 function updateHunger() {
-  if (hungerLevel > 0) {
-    //                            1/100 = 0.01. 0.01 * 100 = 1.
-    //                            1/99  = 0.0101. 0.0101 * 100 = 1.01.
-    const updateAmount = (hungerUpdateRate / 100) * hungerLevel;
-    // 100 - 1 = 99
-    // 99 - 1.01 = 97.99
-    hungerLevel -= updateAmount;
+  if (petEverything.levelDefault.hunger > 0) {
+    petEverything.levelDefault.hunger -= petEverything.updateRates.hunger;
 
-    // If hunger level becomes below 0 reset to 0
-    if (hungerLevel < 0) {
-      hungerLevel = 0;
+    if (petEverything.levelDefault.hunger < 0) {
+      petEverything.levelDefault.hunger = 0;
     }
     updatePet();
   }
 }
 function updateHealth() {
-  if (healthLevel > 0) {
-    const updateAmount = (healthUpdateRate / 100) * healthLevel;
-    healthLevel += updateAmount;
-    if (healthLevel > 100) {
-      healthLevel = 100;
+  if (petEverything.levelDefault.health > 0) {
+    petEverything.levelDefault.health += petEverything.updateRates.health;
+    if (petEverything.levelDefault.health > 100) {
+      petEverything.levelDefault.health = 100;
     }
     updatePet();
   }
 }
 function updateHappy() {
-  if (happyLevel > 0) {
-    const updateAmount = (happyUpdateRate / 100) * hungerLevel;
-    happyLevel -= updateAmount;
-    if (happyLevel < 0) {
-      happyLevel = 0;
+  if (petEverything.levelDefault.happy > 0) {
+    petEverything.levelDefault.happy -= petEverything.updateRates.happy;
+    if (petEverything.levelDefault.happy < 0) {
+      petEverything.levelDefault.happy = 0;
     }
     updatePet();
-  }
-}
-
-//testIntervals
-setInterval(updateHunger, 200);
-setInterval(updateHealth, 2500);
-setInterval(updateHappy, 200);
-setInterval(petAnimate, 500);
-updatePet();
-
-//real intervals
-// setInterval(updateHunger, 2000);
-// setInterval(updateHealth, 5000);
-// setInterval(updateHappy, 1000);
-// updatePet();
-
-// Food Functions
-feedButton.addEventListener("click", function () {
-  hungerLevel += 5;
-  if (hungerLevel > 100) {
-    hungerLevel = 100;
-  }
-  updatePet();
-});
-chocoButton.addEventListener("click", function () {
-  hungerLevel += 6;
-  if (hungerLevel > 100) {
-    hungerLevel = 100;
-  }
-  happyLevel += 10;
-  if (happyLevel > 100) {
-    happyLevel = 100;
-  }
-  healthLevel -= 2;
-  if (healthLevel < 0) {
-    healthLevel = 0;
-  }
-  updatePet();
-});
-saladButton.addEventListener("click", function () {
-  hungerLevel += 3;
-  if (hungerLevel > 100) {
-    hungerLevel = 100;
-  }
-  healthLevel += 2;
-  if (healthLevel > 100) {
-    healthLevel = 100;
-  }
-  happyLevel -= 5;
-  if (happyLevel < 0) {
-    happyLevel = 0;
-  }
-  updatePet();
-});
-
-// Activity Functions
-partyButton.addEventListener("click", function () {
-  hungerLevel -= 10;
-  if (hungerLevel < 0) {
-    hungerLevel = 0;
-  }
-  happyLevel += 20;
-  if (happyLevel > 100) {
-    happyLevel = 100;
-  }
-  updatePet();
-});
-parkButton.addEventListener("click", function () {
-  healthLevel += 10;
-  if (healthLevel > 100) {
-    healthLevel = 100;
-  }
-  happyLevel += 20;
-  if (happyLevel > 100) {
-    happyLevel = 100;
-  }
-  updatePet();
-});
-gymButton.addEventListener("click", function () {
-  hungerLevel -= 10;
-  if (hungerLevel < 0) {
-    hungerLevel = 0;
-  }
-  healthLevel += 20;
-  if (healthLevel > 100) {
-    healthLevel = 100;
-  }
-  updatePet();
-});
-
-function updatePetMood() {
-  const petImg = document.getElementById("petImg");
-
-  if (hungerLevel <= 5 || healthLevel <= 10 || happyLevel <= 5) {
-    petImg.src = `/images/end2.png`;
-    petHasDied();
-  } else if (hungerLevel <= 30 || (happyLevel <= 30 && petMood !== "sad")) {
-    petMood = "sad";
-  } else if (hungerLevel <= 50 || (happyLevel <= 50 && petMood !== "mid")) {
-    petMood = "mid";
-  } else if (hungerLevel <= 90 || (happyLevel <= 90 && petMood !== "happy")) {
-    petMood = "happy";
-  } else if (hungerLevel > 90 || (healthLevel >= 50 && happyLevel > 90 && petMood !== "super")) {
-    petMood = "super";
   }
 }
 function petAnimate() {
@@ -193,13 +123,42 @@ function petAnimate() {
   }
   petImg.src = `/images/${lsAnimalLow}/${lsAnimalLow}-${petMood}${petImageNum}.png`;
 }
+//testIntervals
+setInterval(updateHunger, 200);
+setInterval(updateHealth, 2500);
+setInterval(updateHappy, 200);
+setInterval(petAnimate, 500);
 
-function updatePet() {
-  updateHungerBar();
-  updateHealthBar();
-  updateHappyBar();
+//real intervals
+// setInterval(updateHunger, 2000);
+// setInterval(updateHealth, 5000);
+// setInterval(updateHappy, 1000);
+// updatePet();
 
-  updatePetMood();
+//Food
+feedButton.addEventListener("click", () => animalReward(petEverything.food.feed));
+chocoButton.addEventListener("click", () => animalReward(petEverything.food.chocolate));
+saladButton.addEventListener("click", () => animalReward(petEverything.food.salad));
+//Activities
+partyButton.addEventListener("click", () => animalReward(petEverything.activities.party));
+parkButton.addEventListener("click", () => animalReward(petEverything.activities.park));
+gymButton.addEventListener("click", () => animalReward(petEverything.activities.gym));
+
+// Food Functions
+function animalReward(reward) {
+  petEverything.levelDefault.hunger += reward.hunger;
+  if (petEverything.levelDefault.hunger > 100) {
+    petEverything.levelDefault.hunger = 100;
+  }
+  petEverything.levelDefault.happy += reward.happy;
+  if (petEverything.levelDefault.happy > 100) {
+    petEverything.levelDefault.happy = 100;
+  }
+  petEverything.levelDefault.health += reward.health;
+  if (petEverything.levelDefault.health > 100) {
+    petEverything.levelDefault.health = 100;
+  }
+  updatePet();
 }
 
 // Pet dying function
@@ -237,4 +196,6 @@ function petHasDied() {
   let containerWrapper = document.getElementById("container-wrapper");
 
   document.body.insertBefore(divCreation, containerWrapper);
+
+  petImg.style.zIndex = 20;
 }
