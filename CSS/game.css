@@ -30,7 +30,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   background: #ebd5eb;
 }
 
@@ -114,7 +114,7 @@ img {
   justify-content: space-evenly;
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   height: 25vh;
   padding: 10px;
   background-color: #fff8fe;
@@ -157,10 +157,6 @@ img {
   transition: background-color 0.3s;
 }
 
-#feed-button:hover {
-  background-color: #357c39;
-}
-
 #activity-button:hover {
   background-color: rgb(40, 73, 110);
 }
@@ -189,12 +185,13 @@ img {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  width: 500px;
+  width: 80vw;
   height: 25vh;
 }
 
 .bar {
   display: flex;
+  width: 100%;
 }
 
 .bar h4 {
@@ -309,6 +306,69 @@ img {
   text-decoration: none;
   cursor: pointer;
 }
-/* 
-@media (max-width: 800px;) {
-} */
+
+/* Gaem Over Section */
+#gameOver {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#gameOver h3 {
+  color: #fff;
+  font-size: 64px;
+}
+#gameOver button {
+  margin-top: 50px;
+  font-size: 42px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#food-buttons {
+  display: none;
+  position: absolute;
+  top: -50px;
+  left: 0;
+}
+.food-button {
+  margin: 3px;
+  border: 2px solid black;
+  transition: color 0.3s, background-color 0.3s;
+}
+.food-button:hover {
+  background-color: rgb(0, 255, 0);
+  color: black;
+}
+#activity-buttons {
+  display: none;
+  position: absolute;
+  top: -50px;
+  left: 0;
+}
+.activity-button {
+  margin: 3px;
+  border: 2px solid black;
+  transition: color 0.3s, background-color 0.3s;
+}
+.activity-button:hover {
+  background-color: rgb(0, 255, 0);
+  color: black;
+}
+
+@media (max-width: 800px) {
+  #gameplay-container {
+    flex-direction: column;
+    height: 35vh;
+  }
+  #gameOver {
+    width: 100vw;
+    height: 100vh;
+  }
+}
