@@ -12,6 +12,11 @@ const feedButton = document.getElementById("feed-button");
 const chocoButton = document.getElementById("choco-button");
 const saladButton = document.getElementById("salad-button");
 
+//activites
+const partyButton = document.getElementById("party-button");
+const parkButton = document.getElementById("park-button");
+const gymButton = document.getElementById("gym-button");
+
 // hunger decrease
 let hungerLevel = 100;
 const hungerDecreaseRate = 1;
@@ -124,6 +129,42 @@ saladButton.addEventListener("click", function () {
   happyLevel -= 5;
   if (happyLevel < 0) {
     happyLevel = 0;
+  }
+  updatePet();
+});
+
+partyButton.addEventListener("click", function () {
+  hungerLevel -= 10;
+  if (hungerLevel < 0) {
+    hungerLevel = 0;
+  }
+  happyLevel += 20;
+  if (happyLevel > 100) {
+    happyLevel = 100;
+  }
+  updatePet();
+});
+
+parkButton.addEventListener("click", function () {
+  healthLevel += 10;
+  if (healthLevel > 100) {
+    healthLevel = 100;
+  }
+  happyLevel += 20;
+  if (happyLevel > 100) {
+    happyLevel = 100;
+  }
+  updatePet();
+});
+
+gymButton.addEventListener("click", function () {
+  hungerLevel -= 10;
+  if (hungerLevel < 0) {
+    hungerLevel = 0;
+  }
+  healthLevel += 20;
+  if (healthLevel > 100) {
+    healthLevel = 100;
   }
   updatePet();
 });
