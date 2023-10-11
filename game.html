@@ -4,21 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./CSS/game.css" />
-    <link rel="stylesheet" href="./CSS/functionality.css" />
     <script src="./JS/game.js" defer></script>
     <script src="./JS/functionality.js" defer></script>
     <title>Virtual Pet | Games Page</title>
   </head>
   <body>
     <header></header>
-
     <main>
       <div class="container-wrapper">
         <div class="container">
           <div class="nameBox"></div>
           <div id="changePetColor">
             <div id="pet-container" class="gameSpace">
-              <img class="cat" id="petImg" />
+              <img id="petImg" />
             </div>
           </div>
         </div>
@@ -37,26 +35,43 @@
           </div>
         </div>
         <div id="levels">
-          <div class="levels-container">
-            <div id="hunger-bar"></div>
+          <div class="bar">
+            <h4>Hunger:</h4>
+            <div class="levels-container">
+              <div id="hunger-bar"></div>
+            </div>
           </div>
-          <div class="levels-container">
-            <div id="health-bar"></div>
+          <div class="bar">
+            <h4>Health:</h4>
+            <div class="levels-container">
+              <div id="health-bar"></div>
+            </div>
           </div>
-          <div class="levels-container">
-            <div id="happy-bar"></div>
+          <div class="bar">
+            <h4>Happiness:</h4>
+            <div class="levels-container">
+              <div id="happy-bar"></div>
+            </div>
           </div>
         </div>
-        <button class="food-button" id="feed-button">Feed Pet Food</button>
-        <button class="food-button" id="choco-button">Feed Chocolate</button>
-        <button class="food-button" id="salad-button">Feed Salad</button>
-        <button class="activity-button" id="party-button" onclick="showParty()">
-          Go to the Club
-        </button>
-        <button class="activity-button" id="park-button" onclick="showPark()">
-          Go to the Park
-        </button>
-        <button class="activity-button" id="gym-button">Go to the Gym</button>
+        <!-- <div id="food-buttons">
+          <button class="food-button" id="feed-button">Feed Pet Food</button>
+          <button class="food-button" id="choco-button">Feed Chocolate</button>
+          <button class="food-button" id="salad-button">Feed Salad</button>
+        </div> -->
+        <!-- <div id="activity-buttons">
+          <button
+            class="activity-button"
+            id="party-button"
+            onclick="showParty()"
+          >
+            Go to the Club
+          </button>
+          <button class="activity-button" id="park-button" onclick="showPark()">
+            Go to the Park
+          </button>
+          <button class="activity-button" id="gym-button">Go to the Gym</button>
+        </div> -->
       </div>
     </main>
   </body>

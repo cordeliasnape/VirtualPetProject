@@ -1,17 +1,261 @@
-:root {
+/* :root {
   --main-bg-colour: #bfc7ed;
   --secondary-bg-colour: #6699cc;
   --content-bg-colour: #e6c0e9;
   --main-txt-colour: #f8faf0;
   --outline-colour: #c9eddc;
+} */
+
+/*  {
+  box-sizing: border-box;
+} */
+
+/* Background: #EBD5EB
+Game Background (DON'T CHANGE):#F8FAF0
+Buttons: #C9EDDC
+Buttons2: #E6C0E9
+Header: #95DBAE 
+Text1: #50769B
+Text2: #2F2F2F
+Text3: #FFF8FE
+Borders: #6699CC */
+
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap");
+
+body {
+  font-family: "Chakra Petch", sans-serif;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: #ebd5eb;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  height: 50px;
+  width: 100%;
 }
-/* here to line 44 is the modal function */
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.container-wrapper {
+  display: flex;
+  justify-content: center;
+  top: 0;
+  max-width: 100%;
+  height: 70vh;
+  /* z-index: 1; */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 5px solid white;
+  position: fixed;
+  top: 0;
+  width: 500px;
+  height: 500px;
+  background-color: lightblue;
+  border-radius: 50% 50% 50% 50% / 70% 70% 40% 40%;
+  margin-top: 10px;
+  /* animation: stop 2s linear infinite; */
+}
+
+/* h2,
+h3 {
+  text-align: center;
+  color: white;
+} */
+
+.nameBox {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  max-width: fit-content;
+  max-height: 70px;
+  background-color: #95dbae;
+  border: solid 2px white;
+  margin-top: 30px;
+  padding: 5px 15px;
+}
+
+.gameSpace {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  background-color: #f8faf0;
+  margin-top: 20px;
+  border: 3px solid grey;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+#gameplay-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 25vh;
+  padding: 10px;
+  background-color: #fff8fe;
+}
+
+#buttons {
+  margin-left: 40px;
+  display: flex;
+  height: 90%;
+  width: 30%;
+}
+
+#buttons button {
+  font-family: "Chakra Petch", sans-serif;
+  margin: 30px;
+  width: 50%;
+  font-size: 20px;
+}
+
+.food-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.activity-button {
+  margin-top: 50px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: rgb(76, 122, 175);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#feed-button:hover {
+  background-color: #357c39;
+}
+
+#activity-button:hover {
+  background-color: rgb(40, 73, 110);
+}
+
+#all-levels {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 70%;
+  height: 25vh;
+}
+
+/* #level-names {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+#level-names h4 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff66b2;
+} */
+
+#levels {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 500px;
+  height: 25vh;
+}
+
+.bar {
+  display: flex;
+}
+
+.bar h4 {
+  margin: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #50769b;
+}
+
+.levels-container {
+  display: flex;
+  width: 400px;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 5px;
+  margin: 10px auto;
+}
+
+#hunger-bar {
+  height: 100%;
+  width: 100%;
+  background-color: #ffa500;
+  border-radius: 5px;
+  transition: width 0.5s;
+  max-width: 100%;
+}
+
+#health-bar {
+  height: 100%;
+  width: 100%;
+  background-color: #31b431;
+  border-radius: 5px;
+  transition: width 0.5s;
+  max-width: 100%;
+}
+
+#happy-bar {
+  height: 100%;
+  width: 100%;
+  background-color: #ffd700;
+  border-radius: 5px;
+  transition: width 0.5s;
+  max-width: 100%;
+}
+
+/* @keyframes stop {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: 2px 7px 4px rgb(198, 8, 8);
+  }
+  50% {
+    transform: rotate(180deg);
+    box-shadow: 2px 7px 4px rgb(7, 134, 113);
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 2px 7px 4px rgb(129, 8, 125);
+  }
+} */
+
+/* here to end is the modal function */
 .modal {
   display: none;
   position: fixed;
@@ -65,115 +309,6 @@
   text-decoration: none;
   cursor: pointer;
 }
-
-body {
-  font-family: sans-serif;
-  height: 100vh;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  background: url("/images/backgroundlocations/animalpark.jpg");
-  padding: 20px;
-  margin: 20px;
-}
-.rightSideHeader {
-  position: fixed;
-  border-radius: 10px;
-  padding-left: 50px;
-}
-
-.rightSideHeader button {
-  background-color: white;
-  color: black;
-  font-weight: bold;
-  font-size: 16px;
-  letter-spacing: 2px;
-  text-align: center;
-  height: 75px;
-  width: 75px;
-  border-radius: 37.5px;
-  border-style: solid;
-  margin: 0 150px 0 250px;
-}
-
-.rightSideHeader button:hover {
-  background-color: purple;
-}
-
-.container {
-  border: 10px solid transparent;
-  position: relative;
-  width: 650px;
-  height: 600px;
-  background-color: lightblue;
-  border-radius: 50%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 20px;
-  flex-direction: column;
-  margin-top: 20px;
-  /* animation: stop 2s linear infinite; */
-}
-h2,
-h3 {
-  text-align: center;
-  color: white;
-}
-.nameBox {
-  color: blue;
-  font-size: 30px;
-  font-weight: bold;
-  width: 200px;
-  height: 80px;
-  background-color: lightgreen;
-  margin-top: 30px;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.gameSpace {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 500px;
-  height: 300px;
-  background-color: #f8faf0;
-  margin-top: 20px;
-}
-
-img {
-  width: 100px;
-  height: 100px;
-}
-
-.container-wrapper {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  z-index: 1;
-}
-
-/* @keyframes stop {
-  0% {
-    transform: rotate(0deg);
-    box-shadow: 2px 7px 4px rgb(198, 8, 8);
-  }
-  50% {
-    transform: rotate(180deg);
-    box-shadow: 2px 7px 4px rgb(7, 134, 113);
-  }
-  100% {
-    transform: rotate(360deg);
-    box-shadow: 2px 7px 4px rgb(129, 8, 125);
-  }
+/* 
+@media (max-width: 800px;) {
 } */
