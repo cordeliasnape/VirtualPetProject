@@ -4,45 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./CSS/game.css" />
+    <link rel="stylesheet" href="./CSS/functionality.css" />
     <script src="./JS/game.js" defer></script>
-    <script src="./JS/index.js" defer></script>
-    <title>Tamagoci | Games Page</title>
+    <script src="./JS/functionality.js" defer></script>
+    <title>Virtual Pet | Games Page</title>
   </head>
   <body>
-    <header>
-      <div class="rightSideHeader">
-        <button onclick="savesClicked()">SAVES</button>
-      </div>
-    </header>
+    <header></header>
 
     <main>
       <div class="container-wrapper">
         <div class="container">
           <div class="nameBox"></div>
-          <div class="gameSpace"></div>
-        </div>
-
-        <button id="feedButton">Feed</button>
-        <button id="playButton">Play</button>
-
-        
-        <button id="activityModalButton">Activity</button>
-
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-            <div class="modal-header">
-              <span class="close">&times;</span>
-              <h3>Where would you like to go...</h3>
+          <div id="changePetColor">
+            <div id="pet-container" class="gameSpace">
+              <img class="cat" id="petImg" />
             </div>
-            <div class="modal-body">
-              <button onclick="showPark()">Go to Park</button>
-              <button onclick="showParty()">Go to Party</button>
-            </div>
-            
           </div>
         </div>
-      </section>
-
+      </div>
+      <div id="gameplay-container">
+        <div id="buttons">
+          <button id="feedButton">Feed</button>
+          <button id="activityModalButton">Activity</button>
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close">&times;</span>
+                <h3>Where would you like to go...</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="levels">
+          <div class="levels-container">
+            <div id="hunger-bar"></div>
+          </div>
+          <div class="levels-container">
+            <div id="health-bar"></div>
+          </div>
+          <div class="levels-container">
+            <div id="happy-bar"></div>
+          </div>
+        </div>
+        <button class="food-button" id="feed-button">Feed Pet Food</button>
+        <button class="food-button" id="choco-button">Feed Chocolate</button>
+        <button class="food-button" id="salad-button">Feed Salad</button>
+        <button class="activity-button" id="party-button" onclick="showParty()">
+          Go to the Club
+        </button>
+        <button class="activity-button" id="park-button" onclick="showPark()">
+          Go to the Park
+        </button>
+        <button class="activity-button" id="gym-button">Go to the Gym</button>
+      </div>
     </main>
   </body>
 </html>

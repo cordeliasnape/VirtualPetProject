@@ -1,0 +1,79 @@
+#pet-container {
+  width: 150px;
+  height: 150px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 150px;
+  color: #fff;
+  margin: 20px auto;
+}
+
+.levels-container {
+  width: 150px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 5px;
+  margin: 10px auto;
+  position: relative;
+}
+
+#hunger-bar {
+  height: 100%;
+  width: 100%;
+  background-color: #ffcc00;
+  border-radius: 5px;
+  transition: width 0.5s;
+  max-width: 100%;
+}
+
+#health-bar {
+  height: 100%;
+  width: 100%;
+  background-color: #41af20;
+  border-radius: 5px;
+  transition: width 0.5s;
+  max-width: 100%;
+}
+
+#happy-bar {
+  height: 100%;
+  width: 100%;
+  background-color: #e099d2;
+  border-radius: 5px;
+  transition: width 0.5s;
+  max-width: 100%;
+}
+
+.food-button {
+  margin-top: 50px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.activity-button {
+  margin-top: 50px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: rgb(76, 122, 175);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#feed-button:hover {
+  background-color: #357c39;
+}
+
+#activity-button:hover {
+  background-color: rgb(40, 73, 110);
+}

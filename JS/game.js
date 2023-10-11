@@ -9,8 +9,8 @@ function Pet(name, type, color) {
 
 // Retrieve pet name, type, and color from localStorage
 const savedPetName = localStorage.getItem("petName") || "Default Pet Name";
-const savedPetImage =
-  localStorage.getItem("petImage") || "/images/cats/cat-happy1.png";
+// const savedPetImage =
+//   localStorage.getItem("petImage") || "/images/cats/cat-happy1.png";
 const savedPetColor = localStorage.getItem("petColor") || "#ff0000";
 
 // Set pet name, image, and color on the page
@@ -18,7 +18,11 @@ const nameBox = document.querySelector(".nameBox");
 const gameSpace = document.querySelector(".gameSpace");
 
 // Create a new Pet object with retrieved name, type, and color
-const myPet = new Pet(savedPetName, savedPetImage, savedPetColor);
+const myPet = new Pet(
+  savedPetName,
+  // savedPetImage,
+  savedPetColor
+);
 
 // Function to display pet information
 function displayPetInfo() {
@@ -34,10 +38,10 @@ petNameElement.textContent = savedPetName;
 nameBox.appendChild(petNameElement);
 
 // Display pet image and color
-const petImageElement = document.createElement("img");
-petImageElement.src = savedPetImage;
-petImageElement.style.backgroundColor = savedPetColor;
-gameSpace.appendChild(petImageElement);
+// const petImageElement = document.createElement("img");
+// petImageElement.src = savedPetImage;
+// petImageElement.style.backgroundColor = savedPetColor;
+// gameSpace.appendChild(petImageElement);
 
 //add event listener
 // const petForm = document.getElementById("pet-form");
