@@ -22,7 +22,12 @@
     <main>
       <div class="customiseContainer">
         <div class="leftSideCustomise">
-         <button class="customiseButton" id="customiseName" onclick="showNameContainer()">NAME YOUR PET</button>
+          <button class="customiseButton" id="customiseAnimal" onclick="showAnimalContainer()">CHOOSE YOUR PET</button>
+          <div id="animalContainer">
+            <button class="animalButton" onclick="changeAnimalCat()">CAT</button>
+            <button class="animalButton" onclick="changeAnimalHusky()">HUSKY</button>
+          </div>
+          <button class="customiseButton" id="customiseName" onclick="showNameContainer()">NAME YOUR PET</button>
           <div id="nameContainer">
             <form>
               <fieldset>
@@ -31,12 +36,23 @@
               </fieldset>
             </form>
           </div>
-          <button class="customiseButton" id="customiseColour">CHOOSE COLOUR</button>
-          <button class="customiseButton" id="customiseFinish">START</button>
+          <button class="customiseButton" id="customiseColour" onclick="showColorContainer()">CHOOSE COLOUR</button>
+          <div id="colorPicker">
+            <form>
+              <fieldset>
+                <label for="inputColor">SELECT YOUR PET'S COLOR!</label>
+                <input id="colorFormInput" type="color" name="inputColor" value="#ff0000" />
+                <button id="colorFormSubmit">Submit</button>
+              </fieldset>
+            </form>
+          </div>
+          <button class="customiseButton" id="customiseFinish" onclick="startButton()">START</button>
         </div>
         <div class="rightSideCustomise">
           <h2 id="nameOfPet">NAME OF PET</h2>
-          <img id="petImg" src="./images/cats/cat-super1.png" alt="This is your pet" />
+          <div id="changePetColor">
+            <img id="petImg" src="./images/cats/cat-super1.png" alt="This is your pet" />
+          </div>
         </div>
       </div>
 

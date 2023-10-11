@@ -1,3 +1,11 @@
+:root {
+  --main-bg-colour: #bfc7ed;
+  --secondary-bg-colour: #6699cc;
+  --content-bg-colour: #e6c0e9;
+  --main-txt-colour: #f8faf0;
+  --outline-colour: #c9eddc;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -59,49 +67,113 @@
 }
 
 body {
-  min-height: 100vh;
+
+  font-family: sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   background: url("/images/backgroundlocations/animalpark.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-h1 {
-  text-align: center;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  position: absolute;
-  top: 0;
-  width: 100%;
   padding: 20px;
+  margin: 20px;
+}
+.rightSideHeader {
+  position: fixed;
+  border-radius: 10px;
+  padding-left: 50px;
 }
 
+.rightSideHeader button {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-align: center;
+  height: 75px;
+  width: 75px;
+  border-radius: 37.5px;
+  border-style: solid;
+  margin: 0 150px 0 250px;
+}
+
+.rightSideHeader button:hover {
+  background-color: purple;
+}
+
+.container {
+  border: 10px solid transparent;
+  position: relative;
+  width: 650px;
+  height: 600px;
+  background-color: lightblue;
+  border-radius: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 20px;
+  flex-direction: column;
+  margin-top: 20px;
+  /* animation: stop 2s linear infinite; */
+}
 h2,
 h3 {
   text-align: center;
   color: white;
+}
+.nameBox {
+  color: blue;
+  font-size: 30px;
+  font-weight: bold;
+  width: 200px;
+  height: 80px;
+  background-color: lightgreen;
+  margin-top: 30px;
+  padding: 5px;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-p {
+.gameSpace {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 300px;
+  background-color: lightgreen;
+  margin-top: 20px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.container-wrapper {
+  width: 100%;
+  height: 100%;
   text-align: center;
-  color: white;
-  display: flex;
-  justify-content: center;
+  z-index: 1;
 }
 
-button {
-  padding: 10px;
-  border-radius: 50px;
-  margin-top: 1rem;
-  color: white;
-  cursor: pointer;
-  background-color: #8cd7b4;
-  font-weight: 600;
-  width: 60px;
+@keyframes stop {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: 2px 7px 4px rgb(198, 8, 8);
+  }
+  50% {
+    transform: rotate(180deg);
+    box-shadow: 2px 7px 4px rgb(7, 134, 113);
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 2px 7px 4px rgb(129, 8, 125);
+  }
 }

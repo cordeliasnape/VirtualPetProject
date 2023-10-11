@@ -1,3 +1,14 @@
+/* Background: #EBD5EB
+Background2: #F8FAF0
+Game Background (DON'T CHANGE):#F8FAF0
+Buttons: #C9EDDC
+Buttons2: #E6C0E9
+Header: #95DBAE 
+Text1: #50769B
+Text2: #2F2F2F
+Text3: #FFF8FE
+Borders: #6699CC */
+
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -17,6 +28,10 @@ body {
   color: #fff;
   margin: 20px auto;
 }
+
+/* .cat {
+  display: none;
+} */
 
 .levels-container {
   width: 150px;

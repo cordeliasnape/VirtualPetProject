@@ -9,6 +9,44 @@ function savesClicked() {
   }
 }
 
+// Animal Changer
+const petAnimalForm = document.getElementById("animalContainer");
+let petImg = document.getElementById("petImg");
+let animalType = "";
+
+function showAnimalContainer() {
+  if (petAnimalForm.style.display === "none" || petAnimalForm.style.display === "") {
+    petAnimalForm.style.display = "flex";
+  } else {
+    petAnimalForm.style.display = "none";
+  }
+}
+
+function changeAnimalHusky() {
+  petImg.src = "./images/husky/dog-super1.png";
+  animalType = "Husky";
+
+  localStorage.setItem("petAnimal", animalType);
+}
+
+function changeAnimalCat() {
+  petImg.src = "./images/cats/cat-super1.png";
+  animalType = "Cat";
+
+  localStorage.setItem("petAnimal", animalType);
+}
+
+function setAnimalImage() {
+  let lsAnimal = localStorage.getItem("petAnimal");
+
+  if (lsAnimal === "Husky") {
+    petImg.src = "./images/husky/dog-super1.png";
+  } else if (lsAnimal === "Cat") {
+    petImg.src = "./images/cats/cat-super1.png";
+  }
+}
+setAnimalImage();
+
 // Pet Namer
 let inputName = "Pet Name";
 let myNameContainer = document.getElementById("nameContainer");
@@ -27,10 +65,9 @@ function showNameContainer() {
 }
 
 function setPetName() {
-  inputPetName.innerText = inputName;
+  inputPetName.innerText = localStorage.getItem("petName");
 }
 
-// Pet Name Form
 const petNameForm = document.getElementById("nameContainer");
 
 petNameForm.addEventListener("submit", function (event) {
@@ -47,8 +84,57 @@ petNameForm.addEventListener("submit", function (event) {
   showNameContainer();
   setPetName();
 });
-
-// if (localStorage.getItem(""))
+setPetName();
 
 // Colour Changer
-const petImg = document.getElementById("petImg");
+const petColorForm = document.getElementById("colorPicker");
+let divColorChanger = document.getElementById("changePetColor");
+let petColor = "";
+
+function showColorContainer() {
+  if (petColorForm.style.display === "none" || petColorForm.style.display === "") {
+    petColorForm.style.display = "flex";
+  } else if (petColorForm.style.display === "flex" && petColor === "") {
+    petColorForm.style.display = "none";
+    petColor = "#fff";
+    setPetName();
+  } else {
+    petColorForm.style.display = "none";
+  }
+}
+
+petColorForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const colorChoice = event.target.inputColor.value;
+  petColor = colorChoice;
+
+  if (colorChoice) {
+    petColorChanger();
+  }
+
+  localStorage.setItem("petColor", colorChoice);
+});
+
+function petColorChanger() {
+  divColorChanger.style.backgroundColor = localStorage.getItem("petColor");
+}
+
+petColorChanger();
+
+// Start The Game
+
+function startButton() {
+  const lsPetName = localStorage.getItem("petName");
+  const lsColorName = localStorage.getItem("petColor");
+  const lsAnimalName = localStorage.getItem("petAnimal");
+
+  if (lsPetName && lsColorName && lsAnimalName) {
+    window.location.href = "./game.html";
+  } else {
+    localStorage.setItem("petName", "Freddie");
+    localStorage.setItem("petColor", "#fff");
+    localStorage.setItem("petAnimal", "Cat");
+    window.location.href = "./game.html";
+  }
+}

@@ -1,38 +1,64 @@
 console.log("Hello World");
 
-const petName = prompt("Enter the name of your virtual pet: ");
-const petType = prompt("Choose you animal:");
-//MVP - Cat constructor function
-function Pet(name) {
+// MVP - Cat constructor function
+function Pet(name, type, color) {
   this.name = name;
-  this.type = "cat";
-}
-//STRETCH: allow user to change the color of the animal
-
-//function when user clicks submit on form
-function petInfoSubmit(event) {
-  event.preventDefault();
-
-  //get the values from the form
-  const petName = document.getElementById("pet-name").value;
-  const animalType = document.getElementById("animal-type").value.toLowerCase();
-
-  //check if user types Cat
-  if (animalType === "cat") {
-    const myPet = new Pet(petName, petType);
-    console.log(`Cat Name: ${myPet.name}`);
-    console.log(`Animal Type: ${myPet.type}`);
-  } else {
-    console.log("Try again. Choose an animal from the list");
-  }
+  this.type = type;
+  this.color = color;
 }
 
-//get cat name from local storage from page 1
-//check if name exists in local storage and display it
-// const savedPetName = localStorage.getItem("petName")
-// if (savedPetName){
-//   console.log(`Saved Cat Name: ${savedPetName}`)
-// }
+// Retrieve pet name, type, and color from localStorage
+const savedPetName = localStorage.getItem("petName") || "Default Pet Name";
+const savedPetImage =
+  localStorage.getItem("petImage") || "/images/cats/cat-happy1.png";
+const savedPetColor = localStorage.getItem("petColor") || "#ff0000";
+
+// Set pet name, image, and color on the page
+const nameBox = document.querySelector(".nameBox");
+const gameSpace = document.querySelector(".gameSpace");
+
+// Create a new Pet object with retrieved name, type, and color
+const myPet = new Pet(savedPetName, savedPetImage, savedPetColor);
+
+// Function to display pet information
+function displayPetInfo() {
+  // Display pet name, type, and color
+  console.log(`Pet Name: ${myPet.name}`);
+  console.log(`Animal Type: ${myPet.type}`);
+  console.log(`Pet Color: ${myPet.color}`);
+}
+
+// Display pet name
+const petNameElement = document.createElement("h1");
+petNameElement.textContent = savedPetName;
+nameBox.appendChild(petNameElement);
+
+// Display pet image and color
+const petImageElement = document.createElement("img");
+petImageElement.src = savedPetImage;
+petImageElement.style.backgroundColor = savedPetColor;
+gameSpace.appendChild(petImageElement);
+
+// Get the form element and add an event listener
+// const petForm = document.getElementById("pet-form");
+
+// petForm.addEventListener("submit", function (event) {
+//   event.preventDefault();
+
+//   // Get the input values from the form
+//   const petName = document.getElementById("pet-name").value;
+//   const petType = document.getElementById("animal-type").value.toLowerCase();
+//   const petColor = document.getElementById("pet-color").value;
+
+//   // Save the input values to localStorage
+//   localStorage.setItem("petName", petName);
+//   localStorage.setItem("petType", petType);
+//   localStorage.setItem("petColor", petColor);
+
+//   // Update the myPet object with new values
+//   myPet.name = petName;
+//   myPet.type = petType;
+//   myPet.color = petColor;
 
 //add event listener
 const petForm = document.getElementById("pet-form");
@@ -47,11 +73,11 @@ function showParty() {
   document.querySelector("body").style.background =
     "url('images/backgroundlocations/animalparty.jpg') center center / cover";
 }
-var modal = document.getElementById("myModal");
+const modal = document.getElementById("myModal");
 
-var btn = document.getElementById("activityModalButton");
+const btn = document.getElementById("activityModalButton");
 
-var span = document.getElementsByClassName("close")[0];
+const span = document.getElementsByClassName("close")[0];
 
 btn.onclick = function () {
   modal.style.display = "block";
@@ -65,3 +91,8 @@ window.onclick = function (event) {
   }
 };
 // End of Patrick's background changing code
+
+//   // Call the displayPetInfo function
+//   displayPetInfo();
+// });
+

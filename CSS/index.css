@@ -32,6 +32,9 @@ header img {
 fieldset {
   border: none;
 }
+button {
+  cursor: pointer;
+}
 
 /* HEADER SECTION */
 .leftSideHeader {
@@ -167,6 +170,9 @@ fieldset {
 #petImg {
   border: 2px solid black;
 }
+#changePetColor {
+  background-color: rgb(255, 255, 255);
+}
 
 /* Input Buttons */
 #nameContainer {
@@ -187,6 +193,46 @@ fieldset {
   border: 1px solid grey;
   border-radius: 5px;
   height: 5vh;
+}
+#colorPicker {
+  display: none;
+  margin-top: -60px;
+  background-color: rgba(0, 0, 0, 0.238);
+  color: white;
+  border-radius: 25px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+#colorFormInput {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+#colorFormSubmit {
+  margin-left: 2px;
+  background-color: black;
+  color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 5vh;
+}
+#animalContainer {
+  display: none;
+}
+.animalButton {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid silver;
+
+  display: inline;
+
+  transition: background-color 0.3s, transform 0.3s;
+}
+.animalButton:hover {
+  background-color: rgb(59, 59, 59);
+}
+.animalButton:active {
+  transform: scale(0.8);
 }
 
 /* Media Query for Mobile Devices */
