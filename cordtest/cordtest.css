@@ -81,6 +81,22 @@ body {
   transition: background-color 0.3s;
 }
 
+.activity-button {
+  margin-top: 50px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: rgb(76, 122, 175);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
 #feed-button:hover {
   background-color: #357c39;
+}
+
+#activity-button:hover {
+  background-color: rgb(40, 73, 110);
 }
