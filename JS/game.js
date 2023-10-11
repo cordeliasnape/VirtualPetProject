@@ -1,11 +1,30 @@
-console.log("Hello World");
-
 // MVP - Cat constructor function
 function Pet(name, type, color) {
   this.name = name;
   this.type = type;
   this.color = color;
 }
+
+// Pet Color Changer
+let divColorChanger = document.getElementById("pet-container");
+
+function petColorChanger() {
+  divColorChanger.style.backgroundColor = localStorage.getItem("petColor");
+}
+petColorChanger();
+
+// Pet Animal Changer
+let petImg = document.getElementById("petImg");
+let lsAnimal = localStorage.getItem("petAnimal");
+
+function setAnimalImage() {
+  if (lsAnimal === "Husky") {
+    petImg.src = "./images/husky/dog-super1.png";
+  } else if (lsAnimal === "Cat") {
+    petImg.src = "./images/cats/cat-super1.png";
+  }
+}
+setAnimalImage();
 
 // Retrieve pet name, type, and color from localStorage
 const savedPetName = localStorage.getItem("petName") || "Default Pet Name";
@@ -49,12 +68,10 @@ nameBox.appendChild(petNameElement);
 
 //Patrick's background changing code
 function showPark() {
-  document.querySelector("body").style.background =
-    "url('/images/backgroundlocations/animalpark.jpg') center center / cover";
+  document.querySelector("body").style.background = "url('/images/backgroundlocations/animalpark.jpg') center center / cover";
 }
 function showParty() {
-  document.querySelector("body").style.background =
-    "url('images/backgroundlocations/animalparty.jpg') center center / cover";
+  document.querySelector("body").style.background = "url('images/backgroundlocations/animalparty.jpg') center center / cover";
 }
 const modal = document.getElementById("myModal");
 
