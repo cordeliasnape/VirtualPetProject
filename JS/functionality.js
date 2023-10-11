@@ -95,8 +95,7 @@ updatePet();
 // setInterval(updateHappy, 1000);
 // updatePet();
 
-// food buttons
-
+// Food Functions
 feedButton.addEventListener("click", function () {
   hungerLevel += 5;
   if (hungerLevel > 100) {
@@ -104,7 +103,6 @@ feedButton.addEventListener("click", function () {
   }
   updatePet();
 });
-
 chocoButton.addEventListener("click", function () {
   hungerLevel += 6;
   if (hungerLevel > 100) {
@@ -120,7 +118,6 @@ chocoButton.addEventListener("click", function () {
   }
   updatePet();
 });
-
 saladButton.addEventListener("click", function () {
   hungerLevel += 3;
   if (hungerLevel > 100) {
@@ -137,6 +134,7 @@ saladButton.addEventListener("click", function () {
   updatePet();
 });
 
+// Activity Functions
 partyButton.addEventListener("click", function () {
   hungerLevel -= 10;
   if (hungerLevel < 0) {
@@ -148,7 +146,6 @@ partyButton.addEventListener("click", function () {
   }
   updatePet();
 });
-
 parkButton.addEventListener("click", function () {
   healthLevel += 10;
   if (healthLevel > 100) {
@@ -160,7 +157,6 @@ parkButton.addEventListener("click", function () {
   }
   updatePet();
 });
-
 gymButton.addEventListener("click", function () {
   hungerLevel -= 10;
   if (hungerLevel < 0) {
@@ -189,7 +185,6 @@ function updatePetMood() {
     petMood = "super";
   }
 }
-
 function petAnimate() {
   if (petImageNum === 1) {
     petImageNum = 2;
@@ -198,44 +193,6 @@ function petAnimate() {
   }
   petImg.src = `/images/${lsAnimalLow}/${lsAnimalLow}-${petMood}${petImageNum}.png`;
 }
-
-// function updateCatImage() {
-//   const petImg = document.getElementById("petImg");
-
-//   if (hungerLevel <= 5 || healthLevel <= 10 || happyLevel <= 5) {
-//     petImg.src = "/images/end2.png";
-//     petHasDied();
-//   } else if (hungerLevel <= 30 && happyLevel <= 30) {
-//     petImg.src = "/images/cats/cat-sad1.png";
-//   } else if (hungerLevel <= 50 && happyLevel <= 50) {
-//     petImg.src = "/images/cats/cat-mid1.png";
-//   } else if (hungerLevel <= 90 && happyLevel <= 90) {
-//     petImg.src = "/images/cats/cat-happy1.png";
-//   } else if (hungerLevel > 90 && healthLevel >= 50 && happyLevel > 90) {
-//     petImg.src = "/images/cats/cat-super1.png";
-//   } else {
-//     petImg.src = "";
-//   }
-// }
-
-// function updateDogImage() {
-//   const petImg = document.getElementById("petImg");
-
-//   if (hungerLevel <= 5 || healthLevel <= 10 || happyLevel <= 5) {
-//     petImg.src = "/images/end2.png";
-//     petHasDied();
-//   } else if (hungerLevel <= 30 && happyLevel <= 30) {
-//     petImg.src = "/images/husky/dog-sad1.png";
-//   } else if (hungerLevel <= 50 && happyLevel <= 50) {
-//     petImg.src = "/images/husky/dog-mid1.png";
-//   } else if (hungerLevel <= 90 && happyLevel <= 90) {
-//     petImg.src = "/images/husky/dog-happy1.png";
-//   } else if (hungerLevel > 90 && healthLevel >= 50 && happyLevel > 90) {
-//     petImg.src = "/images/husky/dog-super1.png";
-//   } else {
-//     petImg.src = "";
-//   }
-// }
 
 function updatePet() {
   updateHungerBar();
