@@ -17,6 +17,7 @@ body {
   align-items: center;
 
   overflow: hidden;
+  height: 80vh;
 }
 header {
   display: flex;
@@ -28,59 +29,22 @@ header {
 header img {
   width: 150px;
   height: 150px;
+  position: absolute;
+  z-index: -5;
+}
+header h1 {
+  font-size: 36px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(42, 42, 42);
+
+  margin-top: 85px;
 }
 fieldset {
   border: none;
 }
 button {
   cursor: pointer;
-}
-
-/* HEADER SECTION */
-.leftSideHeader {
-  display: flex;
-  align-items: center;
-  margin-left: 25vw;
-  color: var(--main-txt-colour);
-}
-.leftSideHeader h1 {
-  padding-left: 100px;
-  font-size: 48px;
-  font-weight: bold;
-  text-wrap: nowrap;
-}
-.rightSideHeader {
-  margin-right: 25vw;
-  padding-left: 50px;
-}
-.rightSideHeader button {
-  background-color: var(--content-bg-colour);
-  color: black;
-  font-weight: bold;
-  font-size: 16px;
-  letter-spacing: 2px;
-  text-align: center;
-
-  height: 75px;
-  width: 75px;
-  border-radius: 37.5px;
-  border-style: solid;
-  border-color: var(--outline-colour);
-  overflow: hidden;
-
-  box-shadow: 0px 0px 5px var(--content-bg-colour), 0px 0px 10px var(--content-bg-colour), 0px 0px 25px var(--content-bg-colour),
-    0px 0px 100px var(--content-bg-colour);
-
-  transition: transform 0.3s, background-color 0.3s;
-}
-.rightSideHeader button:hover {
-  background-color: var(--secondary-bg-colour);
-  transform: scale(1.05);
-  box-shadow: 0px 0px 5px var(--secondary-bg-colour), 0px 0px 10px var(--secondary-bg-colour), 0px 0px 25px var(--secondary-bg-colour),
-    0px 0px 100px var(--secondary-bg-colour);
-}
-.rightSideHeader button:active {
-  transform: scale(0.8);
 }
 
 /* CUSTOME SECTION */
@@ -93,7 +57,7 @@ button {
   justify-content: space-around;
 
   width: 40vw;
-  height: 60vh;
+  height: 75vh;
 
   overflow: auto;
 }
@@ -114,8 +78,8 @@ button {
   margin: 25px;
 }
 .rightSideCustomise img {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
 }
 .customiseButton {
   background-color: var(--outline-colour);
@@ -146,32 +110,13 @@ button {
   border: none;
   box-shadow: 0px 0px 5px #c9eddc, 0px 0px 10px #c9eddc, 0px 0px 25px #c9eddc, 0px 0px 50px #c9eddc, 0px 0px 250px #c9eddc;
 }
-#petSavesContainer {
-  width: 50vw;
-  height: 50vh;
-  background-color: grey;
-
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  right: 0;
-  bottom: 0;
-
-  display: none;
-  flex-direction: column;
-  overflow-y: auto;
-}
-.savedData {
-  font-size: 32px;
-  border: 2px solid black;
-  background-color: silver;
-  flex: 1;
-}
 #petImg {
   border: 2px solid black;
 }
 #changePetColor {
   background-color: rgb(255, 255, 255);
+  width: 150px;
+  height: 150px;
 }
 
 /* Input Buttons */
@@ -215,7 +160,9 @@ button {
   height: 5vh;
 }
 #animalContainer {
-  display: none;
+  display: flex;
+  position: static;
+  top: 0;
 }
 .animalButton {
   background-color: black;
@@ -266,6 +213,7 @@ button {
   .customiseContainer {
     flex-direction: column-reverse;
     width: 80vw;
+    height: 75vh;
   }
 
   .rightSideCustomise {
