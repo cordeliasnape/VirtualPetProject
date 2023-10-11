@@ -163,7 +163,7 @@ img {
   z-index: 1;
 }
 
-@keyframes stop {
+/* @keyframes stop {
   0% {
     transform: rotate(0deg);
     box-shadow: 2px 7px 4px rgb(198, 8, 8);
@@ -176,4 +176,4 @@ img {
     transform: rotate(360deg);
     box-shadow: 2px 7px 4px rgb(129, 8, 125);
   }
-}
+} */
