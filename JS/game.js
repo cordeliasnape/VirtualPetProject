@@ -14,7 +14,7 @@ function petColorChanger() {
 petColorChanger();
 
 // Pet Animal Changer
-let petImg = document.getElementById("petImg");
+const petImg = document.getElementById("petImg");
 let lsAnimal = localStorage.getItem("petAnimal");
 let lsAnimalLow = lsAnimal.toLowerCase();
 
