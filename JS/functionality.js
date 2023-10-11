@@ -126,7 +126,7 @@ let petEverything = {
       } else {
         petImageNum = 1;
       }
-      petImg.src = `/images/${lsAnimalLow}/${lsAnimalLow}-${petMood}${petImageNum}.png`;
+      petImg.src = `./images/${lsAnimalLow}/${lsAnimalLow}-${petMood}${petImageNum}.png`;
     },
   },
 };
