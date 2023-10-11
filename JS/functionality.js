@@ -179,7 +179,7 @@ function updateCatImage() {
   //if statement
   if (hungerLevel <= 5 || healthLevel <= 10 || happyLevel <= 5) {
     petImg.src = "/images/end2.png";
-    console.log("your animal ran away");
+    petHasDied();
   } else if (hungerLevel <= 30 && happyLevel <= 30) {
     petImg.src = "/images/cats/cat-sad1.png";
   } else if (hungerLevel <= 50 && happyLevel <= 50) {
@@ -203,6 +203,7 @@ function updateDogImage() {
   //if statement
   if (hungerLevel <= 5 || healthLevel <= 10 || happyLevel <= 5) {
     petImg.src = "/images/end2.png";
+    petHasDied();
   } else if (hungerLevel <= 30 && happyLevel <= 30) {
     petImg.src = "/images/husky/dog-sad1.png";
   } else if (hungerLevel <= 50 && happyLevel <= 50) {
@@ -220,6 +221,49 @@ function updatePet() {
   updateHungerBar();
   updateHealthBar();
   updateHappyBar();
-  updateCatImage();
+  // updateCatImage();
   // updateDogImage();
+
+  if (lsAnimal === "Husky") {
+    updateDogImage();
+  } else if (lsAnimal === "Cat") {
+    updateCatImage();
+  }
+}
+
+// Pet dying function
+function petHasDied() {
+  let divCreation = document.createElement("div");
+  console.log(divCreation);
+
+  divCreation.style.width = "100vw";
+  divCreation.style.height = "100vh";
+  divCreation.style.backgroundColor = "#000";
+  divCreation.style.position = "absolute";
+  divCreation.style.top = "0";
+  divCreation.style.left = "0";
+  divCreation.style.display = "flex";
+  divCreation.style.alignItems = "center";
+  divCreation.style.justifyContent = "center";
+  divCreation.style.flexDirection = "column";
+
+  let gameOver = document.createElement("h3");
+  gameOver.innerHTML = "GAME OVER!";
+  gameOver.style.color = "#fff";
+  gameOver.style.fontSize = "64px";
+  divCreation.appendChild(gameOver);
+
+  let restart = document.createElement("button");
+  restart.innerText = "RESTART";
+  restart.style.marginTop = "50px";
+  restart.style.fontSize = "42px";
+  restart.style.borderRadius = "12px";
+  restart.onclick = function () {
+    location.assign("./index.html");
+  };
+  divCreation.appendChild(restart);
+
+  let containerWrapper = document.getElementById("container-wrapper");
+
+  document.body.insertBefore(divCreation, containerWrapper);
 }
