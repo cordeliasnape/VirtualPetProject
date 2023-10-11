@@ -39,30 +39,9 @@ petImageElement.src = savedPetImage;
 petImageElement.style.backgroundColor = savedPetColor;
 gameSpace.appendChild(petImageElement);
 
-// Get the form element and add an event listener
-// const petForm = document.getElementById("pet-form");
-
-// petForm.addEventListener("submit", function (event) {
-//   event.preventDefault();
-
-//   // Get the input values from the form
-//   const petName = document.getElementById("pet-name").value;
-//   const petType = document.getElementById("animal-type").value.toLowerCase();
-//   const petColor = document.getElementById("pet-color").value;
-
-//   // Save the input values to localStorage
-//   localStorage.setItem("petName", petName);
-//   localStorage.setItem("petType", petType);
-//   localStorage.setItem("petColor", petColor);
-
-//   // Update the myPet object with new values
-//   myPet.name = petName;
-//   myPet.type = petType;
-//   myPet.color = petColor;
-
 //add event listener
-const petForm = document.getElementById("pet-form");
-petForm.addEventListener("submit", petInfoSubmit);
+// const petForm = document.getElementById("pet-form");
+// petForm.addEventListener("submit", petInfoSubmit);
 
 //Patrick's background changing code
 function showPark() {
@@ -95,4 +74,3 @@ window.onclick = function (event) {
 //   // Call the displayPetInfo function
 //   displayPetInfo();
 // });
-
