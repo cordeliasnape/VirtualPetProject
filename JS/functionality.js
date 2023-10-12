@@ -190,21 +190,23 @@ parkButton.addEventListener("click", () => backgroundChanger(petEverything.activ
 gymButton.addEventListener("click", () => backgroundChanger(petEverything.activities.gym));
 
 function backgroundChanger(petEvent) {
-  if (petEvent === petEverything.activities.party) {
-    backgroundChange.style.backgroundImage = `url("./images/backgroundlocations/animalparty.jpg")`;
-    backgroundChange.style.backgroundRepeat = "none";
-    backgroundChange.style.backgroundPosition = "center";
-    backgroundChange.style.backgroundSize = "cover";
-  } else if (petEvent === petEverything.activities.park) {
-    backgroundChange.style.backgroundImage = `url("./images/backgroundlocations/animalpark.jpg")`;
-    backgroundChange.style.backgroundRepeat = "none";
-    backgroundChange.style.backgroundSize = "cover";
-    backgroundChange.style.backgroundPositionY = "-125px";
-  } else if (petEvent === petEverything.activities.gym) {
-    backgroundChange.style.backgroundImage = `url("./images/backgroundlocations/animalgym.jpg")`;
-    backgroundChange.style.backgroundRepeat = "none";
-    backgroundChange.style.backgroundPosition = "center";
-    backgroundChange.style.backgroundSize = "cover";
+  if (petEvent.travel > 0) {
+    if (petEvent === petEverything.activities.party) {
+      backgroundChange.style.backgroundImage = `url("./images/backgroundlocations/animalparty.jpg")`;
+      backgroundChange.style.backgroundRepeat = "none";
+      backgroundChange.style.backgroundPosition = "center";
+      backgroundChange.style.backgroundSize = "cover";
+    } else if (petEvent === petEverything.activities.park) {
+      backgroundChange.style.backgroundImage = `url("./images/backgroundlocations/animalpark.jpg")`;
+      backgroundChange.style.backgroundRepeat = "none";
+      backgroundChange.style.backgroundSize = "cover";
+      backgroundChange.style.backgroundPositionY = "-125px";
+    } else if (petEvent === petEverything.activities.gym) {
+      backgroundChange.style.backgroundImage = `url("./images/backgroundlocations/animalgym.jpg")`;
+      backgroundChange.style.backgroundRepeat = "none";
+      backgroundChange.style.backgroundPosition = "center";
+      backgroundChange.style.backgroundSize = "cover";
+    }
   }
 }
 
