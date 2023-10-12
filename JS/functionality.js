@@ -10,6 +10,7 @@ const happyBar = document.getElementById("happy-bar");
 const feedButton = document.getElementById("feed-button");
 const chocoButton = document.getElementById("choco-button");
 const saladButton = document.getElementById("salad-button");
+const paperButton = document.getElementById("paper-button");
 const partyButton = document.getElementById("party-button");
 const parkButton = document.getElementById("park-button");
 const gymButton = document.getElementById("gym-button");
@@ -52,6 +53,12 @@ let petEverything = {
       health: 3,
       hunger: 0,
       inventory: 3,
+    },
+    paper: {
+      happy: 30,
+      health: -10,
+      hunger: -5,
+      inventory: 2,
     },
   },
   activities: {
@@ -110,6 +117,7 @@ let petEverything = {
         happyBar.style.width = `${petEverything.updateEveryTick.levelDefault.happy}%`;
 
         saladButton.innerText = `Feed Salad: ${petEverything.food.salad.inventory}`;
+        paperButton.innerText = `Feed Paper: ${petEverything.food.paper.inventory}`;
         chocoButton.innerText = `Feed Chocolate: ${petEverything.food.chocolate.inventory}`;
         feedButton.innerText = `Feed Pet Food: ${petEverything.food.feed.inventory}`;
 
@@ -152,6 +160,7 @@ let petEverything = {
       if (petMood !== "dead") {
         petEverything.food.feed.inventory += 2;
         petEverything.food.salad.inventory += 2;
+        petEverything.food.paper.inventory += 2;
         petEverything.food.chocolate.inventory += 2;
         petEverything.activities.gym.travel += 2;
         petEverything.activities.park.travel += 2;
@@ -170,6 +179,7 @@ setInterval(gotGoldCoin, 5000);
 feedButton.addEventListener("click", () => animalReward(petEverything.food.feed));
 chocoButton.addEventListener("click", () => animalReward(petEverything.food.chocolate));
 saladButton.addEventListener("click", () => animalReward(petEverything.food.salad));
+paperButton.addEventListener("click", () => animalReward(petEverything.food.paper));
 //Activities
 partyButton.addEventListener("click", () => animalReward(petEverything.activities.party));
 parkButton.addEventListener("click", () => animalReward(petEverything.activities.park));
@@ -244,6 +254,7 @@ function gotGoldCoin() {
   goldCoin.style.left = `${ranLeft}px`;
   goldCoin.style.borderRadius = "25px";
   goldCoin.style.border = "none";
+  goldCoin.style.zIndex = "250";
   goldCoin.addEventListener("click", petEverything.petMethods.tempInvFunc);
   goldCoin.addEventListener("click", function () {
     goldCoin.remove();

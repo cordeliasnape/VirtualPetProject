@@ -339,6 +339,7 @@ img {
 
 /* Gaem Over Section */
 #gameOver {
+  z-index: 500;
   width: 100vw;
   height: 100vh;
   background-color: #000;
