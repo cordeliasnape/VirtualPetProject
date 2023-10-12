@@ -12,6 +12,7 @@
     margin: 0;
     box-sizing: border-box;
   }
+}
 
 body {
   font-family: "Chakra Petch", sans-serif;
@@ -24,16 +25,9 @@ body {
   color: var(--main-txt-colour);
   padding: 12px;
 }
-  
+
 body {
-  background: linear-gradient(
-    -45deg,
-    #bfc7ed,
-    #6699cc,
-    #e6c0e9,
-    #f8faf0,
-    #c9eddc
-  );
+  background: linear-gradient(-45deg, #bfc7ed, #6699cc, #e6c0e9, #f8faf0, #c9eddc);
   background-size: 400% 400%;
   height: 100vh;
   display: flex;
