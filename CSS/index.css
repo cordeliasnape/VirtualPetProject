@@ -7,6 +7,25 @@
 }
 
 /* DEFAULTS */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 20vh;
+  z-index: 100;
+}
+header img {
+  width: 150px;
+  height: 150px;
+  z-index: -5;
+}
+header h1 {
+  font-size: 36px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(42, 42, 42);
+}
 body {
   margin: 10px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -19,27 +38,6 @@ body {
   overflow: hidden;
   height: 80vh;
 }
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  height: 20vh;
-}
-header img {
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  z-index: -5;
-}
-header h1 {
-  font-size: 36px;
-  font-weight: bold;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: rgb(42, 42, 42);
-
-  margin-top: 85px;
-}
 fieldset {
   border: none;
 }
@@ -49,20 +47,47 @@ button {
 ul {
   list-style-type: none;
 }
+
 /* Sidebar section */
 .wrapper .sidebar {
-  background: #e6c0e9;
+  background: var(--secondary-bg-colour);
+  border-right: 2px solid black;
   position: fixed;
   top: 0;
   left: 0;
   width: 225px;
   height: 100%;
-  padding: 20px 0;
   transition: all 0.5s ease;
 }
-/* CUSTOME SECTION */
+#navButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+.navButton {
+  padding: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bolder;
+  font-size: 16px;
+  background-color: var(--outline-colour);
+  border-radius: 12px;
+}
+.navButton:hover {
+  background-color: aliceblue;
+  transform: scale(1.2);
+  box-shadow: 0px 0px 5px aliceblue, 0px 0px 10px aliceblue, 0px 0px 25px aliceblue, 0px 0px 150px aliceblue;
+  border: none;
+}
+.arrowB {
+  font-size: 48px;
+}
+
+/* CUSTOMISE SECTION */
 .customiseContainer {
   border: 3px solid black;
+  border-radius: 50px;
+  box-shadow: 0px 0px 5px black, 0px 0px 10px black, 0px 0px 25px black, 0px 0px 150px black;
   background-color: var(--secondary-bg-colour);
 
   display: flex;
@@ -121,8 +146,7 @@ ul {
 }
 #customiseFinish {
   border: none;
-  box-shadow: 0px 0px 5px #c9eddc, 0px 0px 10px #c9eddc, 0px 0px 25px #c9eddc,
-    0px 0px 50px #c9eddc, 0px 0px 250px #c9eddc;
+  box-shadow: 0px 0px 5px #c9eddc, 0px 0px 10px #c9eddc, 0px 0px 25px #c9eddc, 0px 0px 50px #c9eddc, 0px 0px 250px #c9eddc;
 }
 #petImg {
   border: 2px solid black;
@@ -135,8 +159,6 @@ ul {
 
 /* Input Buttons */
 #nameContainer {
-  margin-top: -50px;
-
   display: none;
 }
 #nameContainer input {
@@ -155,7 +177,6 @@ ul {
 }
 #colorPicker {
   display: none;
-  margin-top: -60px;
   background-color: rgba(0, 0, 0, 0.238);
   color: white;
   border-radius: 25px;
@@ -174,7 +195,7 @@ ul {
   height: 5vh;
 }
 #animalContainer {
-  display: flex;
+  display: none;
   position: static;
   top: 0;
 }
@@ -194,6 +215,10 @@ ul {
 }
 .animalButton:active {
   transform: scale(0.8);
+}
+#nameOfPet {
+  font-size: 48px;
+  margin: 0;
 }
 
 /* Media Query for Mobile Devices */
@@ -232,5 +257,28 @@ ul {
 
   .rightSideCustomise {
     margin-top: 25px;
+  }
+
+  .wrapper .sidebar {
+    background: #e6c0e9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+  }
+  .wrapper:hover .sidebar:hover {
+    width: 225px;
+  }
+  #navButtons {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
   }
 }
