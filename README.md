@@ -1,13 +1,5 @@
 # Virtual Pet Project
 
-**Please note:** This README is a copy of the project for reference. For the most up-to-date version, visit the [Virtual Pet Project website](https://patrickpatch.github.io/VirtualPetProject/).
-
-[The original repo can be accessed by following this link](https://github.com/PatrickPatch/VirtualPetProject).
-
-## Project Overview
-
-### Virtual Pet Project
-
 This project was developed as part of the Full Stack MERN Bootcamp at Tech Educators.
 
 We aimed to recreate a digital pet simulation reminiscent of the classic Tamagotchi game, complete with engaging interactions and pet care. It was essential for us to have a unique design for our pets to avoid copyright issues.
