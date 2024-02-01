@@ -84,7 +84,7 @@ ul {
   width: 40vw;
   height: 75vh;
 
-  overflow: auto;
+  overflow: none;
 }
 .leftSideCustomise {
   display: flex;
