@@ -9,37 +9,24 @@
 }
 
 /* DEFAULTS */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
-  height: 20vh;
-  z-index: 100;
-}
-header img {
-  width: 150px;
-  height: 150px;
-  z-index: -5;
-}
-header h1 {
-  font-size: 36px;
-  font-weight: bold;
-  font-family: "Chakra Petch", sans-serif;
-  color: rgb(42, 42, 42);
-}
 body {
-  margin: 10px;
   font-family: "Chakra Petch", sans-serif;
   background-color: var(--main-bg-colour);
-
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
-
+  align-items: center; */
   overflow: hidden;
-  height: 80vh;
 }
+
+main {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
 fieldset {
   border: none;
 }
@@ -78,8 +65,6 @@ ul {
 .navButton:hover {
   background-color: aliceblue;
   transform: scale(1.2);
-  box-shadow: 0px 0px 5px aliceblue, 0px 0px 10px aliceblue,
-    0px 0px 25px aliceblue, 0px 0px 150px aliceblue;
   border: none;
 }
 .arrowB {
@@ -90,8 +75,6 @@ ul {
 .customiseContainer {
   border: 3px solid black;
   border-radius: 50px;
-  box-shadow: 0px 0px 5px black, 0px 0px 10px black, 0px 0px 25px black,
-    0px 0px 150px black;
   background-color: var(--secondary-bg-colour);
 
   display: flex;
@@ -149,9 +132,8 @@ ul {
   transform: scale(0.9);
 }
 #customiseFinish {
+  background-color: pink;
   border: none;
-  box-shadow: 0px 0px 5px #c9eddc, 0px 0px 10px #c9eddc, 0px 0px 25px #c9eddc,
-    0px 0px 50px #c9eddc, 0px 0px 250px #c9eddc;
 }
 #petImg {
   border: 2px solid black;

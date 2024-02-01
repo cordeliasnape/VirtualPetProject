@@ -180,13 +180,13 @@ function updateCatImage() {
   if (hungerLevel <= 5 || healthLevel <= 10 || happyLevel <= 5) {
     petImg.src = "/images/end2.png";
   } else if (hungerLevel <= 30 && happyLevel <= 30) {
-    petImg.src = "/images/cats/cat-sad1.png";
+    petImg.src = "/images/cat/cat-sad1.png";
   } else if (hungerLevel <= 50 && happyLevel <= 50) {
-    petImg.src = "/images/cats/cat-mid1.png";
+    petImg.src = "/images/cat/cat-mid1.png";
   } else if (hungerLevel <= 90 && happyLevel <= 90) {
-    petImg.src = "/images/cats/cat-happy1.png";
+    petImg.src = "/images/cat/cat-happy1.png";
   } else if (hungerLevel > 90 && healthLevel >= 50 && happyLevel > 90) {
-    petImg.src = "/images/cats/cat-super1.png";
+    petImg.src = "/images/cat/cat-super1.png";
   } else {
     petImg.src = "";
   }
